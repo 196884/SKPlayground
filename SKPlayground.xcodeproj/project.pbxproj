@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		344C130219E18E0E00215F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C130119E18E0E00215F54 /* AppDelegate.swift */; };
-		344C130419E18E0E00215F54 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 344C130319E18E0E00215F54 /* GameScene.sks */; };
-		344C130619E18E0E00215F54 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C130519E18E0E00215F54 /* GameScene.swift */; };
-		344C130819E18E0E00215F54 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C130719E18E0E00215F54 /* GameViewController.swift */; };
+		344C130819E18E0E00215F54 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C130719E18E0E00215F54 /* IntroViewController.swift */; };
 		344C130B19E18E0E00215F54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 344C130919E18E0E00215F54 /* Main.storyboard */; };
 		344C130D19E18E0F00215F54 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344C130C19E18E0F00215F54 /* Images.xcassets */; };
 		344C131019E18E0F00215F54 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344C130E19E18E0F00215F54 /* LaunchScreen.xib */; };
 		344C131C19E18E0F00215F54 /* SKPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C131B19E18E0F00215F54 /* SKPlaygroundTests.swift */; };
+		344C132619E18E8800215F54 /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132519E18E8800215F54 /* IntroScene.swift */; };
+		344C132819E196E800215F54 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132719E196E800215F54 /* PlayViewController.swift */; };
+		344C132A19E1971800215F54 /* PlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132919E1971800215F54 /* PlayScene.swift */; };
+		344C132C19E19BBF00215F54 /* GameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132B19E19BBF00215F54 /* GameOptions.swift */; };
+		344C132E19E19EAE00215F54 /* BlocksGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132D19E19EAE00215F54 /* BlocksGame.swift */; };
+		344C133019E1B19100215F54 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132F19E1B19100215F54 /* Array2D.swift */; };
+		344C133219E1B1B700215F54 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C133119E1B1B700215F54 /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,15 +36,20 @@
 		344C12FC19E18E0E00215F54 /* SKPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		344C130019E18E0E00215F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		344C130119E18E0E00215F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		344C130319E18E0E00215F54 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		344C130519E18E0E00215F54 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		344C130719E18E0E00215F54 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		344C130719E18E0E00215F54 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		344C130A19E18E0E00215F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		344C130C19E18E0F00215F54 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		344C130F19E18E0F00215F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		344C131519E18E0F00215F54 /* SKPlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKPlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		344C131A19E18E0F00215F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		344C131B19E18E0F00215F54 /* SKPlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPlaygroundTests.swift; sourceTree = "<group>"; };
+		344C132519E18E8800215F54 /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		344C132719E196E800215F54 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		344C132919E1971800215F54 /* PlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayScene.swift; sourceTree = "<group>"; };
+		344C132B19E19BBF00215F54 /* GameOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOptions.swift; sourceTree = "<group>"; };
+		344C132D19E19EAE00215F54 /* BlocksGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocksGame.swift; sourceTree = "<group>"; };
+		344C132F19E1B19100215F54 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		344C133119E1B1B700215F54 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +92,18 @@
 			isa = PBXGroup;
 			children = (
 				344C130119E18E0E00215F54 /* AppDelegate.swift */,
-				344C130319E18E0E00215F54 /* GameScene.sks */,
-				344C130519E18E0E00215F54 /* GameScene.swift */,
-				344C130719E18E0E00215F54 /* GameViewController.swift */,
+				344C130719E18E0E00215F54 /* IntroViewController.swift */,
+				344C132719E196E800215F54 /* PlayViewController.swift */,
 				344C130919E18E0E00215F54 /* Main.storyboard */,
 				344C130C19E18E0F00215F54 /* Images.xcassets */,
 				344C130E19E18E0F00215F54 /* LaunchScreen.xib */,
 				344C12FF19E18E0E00215F54 /* Supporting Files */,
+				344C132519E18E8800215F54 /* IntroScene.swift */,
+				344C132919E1971800215F54 /* PlayScene.swift */,
+				344C132B19E19BBF00215F54 /* GameOptions.swift */,
+				344C132D19E19EAE00215F54 /* BlocksGame.swift */,
+				344C132F19E1B19100215F54 /* Array2D.swift */,
+				344C133119E1B1B700215F54 /* Block.swift */,
 			);
 			path = SKPlayground;
 			sourceTree = "<group>";
@@ -200,7 +215,6 @@
 			files = (
 				344C131019E18E0F00215F54 /* LaunchScreen.xib in Resources */,
 				344C130D19E18E0F00215F54 /* Images.xcassets in Resources */,
-				344C130419E18E0E00215F54 /* GameScene.sks in Resources */,
 				344C130B19E18E0E00215F54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				344C130619E18E0E00215F54 /* GameScene.swift in Sources */,
-				344C130819E18E0E00215F54 /* GameViewController.swift in Sources */,
+				344C132C19E19BBF00215F54 /* GameOptions.swift in Sources */,
+				344C132819E196E800215F54 /* PlayViewController.swift in Sources */,
+				344C132E19E19EAE00215F54 /* BlocksGame.swift in Sources */,
+				344C132A19E1971800215F54 /* PlayScene.swift in Sources */,
+				344C130819E18E0E00215F54 /* IntroViewController.swift in Sources */,
+				344C133019E1B19100215F54 /* Array2D.swift in Sources */,
+				344C133219E1B1B700215F54 /* Block.swift in Sources */,
+				344C132619E18E8800215F54 /* IntroScene.swift in Sources */,
 				344C130219E18E0E00215F54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +369,7 @@
 				INFOPLIST_FILE = SKPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -359,6 +380,7 @@
 				INFOPLIST_FILE = SKPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

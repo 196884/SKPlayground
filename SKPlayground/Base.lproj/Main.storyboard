@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="IntroViewController" customModule="SKPlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
                         <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
@@ -16,10 +16,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="aab-7m-3WU" appends="YES" id="lXj-OY-6FV"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aab-7m-3WU">
+                    <connections>
+                        <segue destination="yzV-7n-bE9" kind="show" id="7Xv-Bb-Hcl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+        </scene>
+        <!--Play View Controller-->
+        <scene sceneID="z9E-7W-Hfq">
+            <objects>
+                <viewController id="yzV-7n-bE9" customClass="PlayViewController" customModule="SKPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qk3-Op-ir1"/>
+                        <viewControllerLayoutGuide type="bottom" id="7y8-8p-qt7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Erv-Zs-jQA" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIN-ML-5VO">
+                                <rect key="frame" x="509" y="28" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="21"/>
+                                <state key="normal" title="QUIT">
+                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="Icd-Dz-A7R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kLm-cx-Xrh" appends="YES" id="7zQ-mg-d9d"/>
+                            <outletCollection property="gestureRecognizers" destination="vbf-MU-1yx" appends="YES" id="w0S-j6-lyi"/>
+                            <outletCollection property="gestureRecognizers" destination="NYK-TW-2WC" appends="YES" id="BCW-0O-7ex"/>
+                            <outletCollection property="gestureRecognizers" destination="6bC-cg-wk3" appends="YES" id="x6C-CA-SyO"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="om9-59-8nn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="kLm-cx-Xrh">
+                    <connections>
+                        <action selector="moveRight:" destination="yzV-7n-bE9" id="C1G-6Q-iwZ"/>
+                        <outlet property="delegate" destination="yzV-7n-bE9" id="4mM-Qo-W83"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="vbf-MU-1yx">
+                    <connections>
+                        <action selector="moveLeft:" destination="yzV-7n-bE9" id="Skj-2b-ghe"/>
+                        <outlet property="delegate" destination="yzV-7n-bE9" id="zAL-4N-tlK"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="NYK-TW-2WC">
+                    <connections>
+                        <action selector="moveDown:" destination="yzV-7n-bE9" id="nfU-FF-TjD"/>
+                        <outlet property="delegate" destination="yzV-7n-bE9" id="QIV-5b-AlH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="6bC-cg-wk3">
+                    <connections>
+                        <action selector="moveUp:" destination="yzV-7n-bE9" id="m0R-QS-CUB"/>
+                        <outlet property="delegate" destination="yzV-7n-bE9" id="19A-qu-fjt"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="811" y="136"/>
         </scene>
     </scenes>
 </document>
