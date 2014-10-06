@@ -10,20 +10,24 @@ import Foundation
 import SpriteKit
 
 class PlayScene : SKScene {
-    let BackgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
-    let GridColor       = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
-    let EmptyBlockColor = UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1.0)
-    let MoveDuration:NSTimeInterval = 0.4
+    let BackgroundColor             = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
+    let GridColor                   = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
+    let EmptyBlockColor             = UIColor(red: 0.35, green: 0.35, blue: 0.35, alpha: 1.0)
+    
+    let MoveDuration:NSTimeInterval = 0.1
+    
     let FreeAtTop:CGFloat           = 100
     let OutBorderUnits:CGFloat      = 0.5
     let InBorderUnits:CGFloat       = 0.05
     let IntraBorderUnits:CGFloat    = 0.02
+    
     var contentsCreated:Bool        = false
-    var NumColumns:Int   = -1
-    var NumRows:Int      = -1
-    var UnitSize:CGFloat = -1
-    var WOffset:CGFloat  = -1
-    var HOffset:CGFloat  = -1
+    
+    var NumColumns:Int              = -1
+    var NumRows:Int                 = -1
+    var UnitSize:CGFloat            = -1
+    var WOffset:CGFloat             = -1
+    var HOffset:CGFloat             = -1
     
     init(size: CGSize, gameOptions: GameOptions) {
         super.init(size: size)
@@ -36,6 +40,7 @@ class PlayScene : SKScene {
     }
     
     override func didMoveToView(view: SKView) {
+        NSLog("movedToView")
         if !contentsCreated {
             createSceneContents()
             contentsCreated = true
@@ -44,7 +49,6 @@ class PlayScene : SKScene {
     
     func createSceneContents() {
         backgroundColor     = BackgroundColor
-        position            = CGPoint(x: 0.0, y: 0.0)
         createGrid()
     }
     
@@ -94,7 +98,7 @@ class PlayScene : SKScene {
         block.node           = blockShape
         
         // Animation
-        let fadeInAction = SKAction.fadeAlphaTo(1, duration: 0.4)
+        let fadeInAction = SKAction.fadeAlphaTo(1, duration: MoveDuration)
         blockShape.runAction(fadeInAction, completion: completion)
     }
     
@@ -154,9 +158,5 @@ class PlayScene : SKScene {
             ]))
         }
         runAction(SKAction.waitForDuration(MoveDuration), completion: completion)
-    }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
     }
 }

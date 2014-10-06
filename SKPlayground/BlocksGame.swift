@@ -48,21 +48,46 @@ class BlocksGame {
         }
         let nbFreePositions = UInt32(freePositions.count)
         if 0 == nbFreePositions {
-            // No more free positions: the game is finished!
             endGame()
         } else {
             let freePositionIdx = Int(arc4random_uniform(nbFreePositions))
             let position        = freePositions[freePositionIdx]
             var block = Block(row: position.row, column: position.column)
             blockArray[position.column, position.row] = block
+            if 1 == nbFreePositions && isGameFinished() {
+                endGame()
+            }
             delegate?.addBlock(block)
         }
     }
     
+    func isGameFinished() -> Bool {
+        // Checks if any move is possible!
+        for rowIdx in 1..<NumRows {
+            for colIdx in 1..<NumColumns {
+                if let block = blockArray[colIdx, rowIdx] {
+                    if let block2 = blockArray[colIdx-1, rowIdx] {
+                        if block.combineableWith(block2) {
+                            return false
+                        }
+                    } else {
+                        return false
+                    }
+                    if let block3 = blockArray[colIdx, rowIdx-1] {
+                        if block.combineableWith(block3) {
+                            return false
+                        }
+                    } else {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
     func endGame() {
-        NSLog("Game did end")
         delegate?.gameDidEnd(self)
-        beginGame()
     }
     
     func updateScore(nbTransformed: Int) {
@@ -76,6 +101,22 @@ class BlocksGame {
             --rem
         }
         score += points
+    }
+    
+    func logState() -> () {
+        var stateStr = ""
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                let i = NumRows - 1 - row
+                if let block = blockArray[column, i] {
+                    stateStr += String(block.color.toRaw())
+                } else {
+                    stateStr += "#"
+                }
+            }
+            stateStr += "\n"
+        }
+        NSLog("Current state:\n%@\n", stateStr);
     }
     
     func moveLeft() -> () {
@@ -93,7 +134,7 @@ class BlocksGame {
                 
                 if var block = blockArray[srcIdx, row] {
                     // Can the block be combined with the previous one? (if there's one...)
-                    if combineable && blockArray[dstIdx, row]!.combineableWith(block) {
+                    if combineable && blockArray[dstIdx, row]!.combineWith(block) {
                         blockArray[srcIdx, row] = nil
                         block.column = dstIdx
                         removedBlocks.append(block)
@@ -144,7 +185,7 @@ class BlocksGame {
                 let srcIdx = NumColumns - 1 - auxIdx
                 if var block = blockArray[srcIdx, row] {
                     // Can the block be combined with the previous one? (if there's one...)
-                    if combineable && blockArray[dstIdx, row]!.combineableWith(block) {
+                    if combineable && blockArray[dstIdx, row]!.combineWith(block) {
                         blockArray[srcIdx, row] = nil
                         block.column = dstIdx
                         removedBlocks.append(block)
@@ -195,7 +236,7 @@ class BlocksGame {
                 
                 if var block = blockArray[column, srcIdx] {
                     // Can the block be combined with the previous one? (if there's one...)
-                    if combineable && blockArray[column, dstIdx]!.combineableWith(block) {
+                    if combineable && blockArray[column, dstIdx]!.combineWith(block) {
                         blockArray[column, srcIdx] = nil
                         block.row = dstIdx
                         removedBlocks.append(block)
@@ -247,7 +288,7 @@ class BlocksGame {
                 
                 if var block = blockArray[column, srcIdx] {
                     // Can the block be combined with the previous one? (if there's one...)
-                    if combineable && blockArray[column, dstIdx]!.combineableWith(block) {
+                    if combineable && blockArray[column, dstIdx]!.combineWith(block) {
                         blockArray[column, srcIdx] = nil
                         block.row = dstIdx
                         removedBlocks.append(block)

@@ -20,6 +20,9 @@
 		344C132E19E19EAE00215F54 /* BlocksGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132D19E19EAE00215F54 /* BlocksGame.swift */; };
 		344C133019E1B19100215F54 /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C132F19E1B19100215F54 /* Array2D.swift */; };
 		344C133219E1B1B700215F54 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C133119E1B1B700215F54 /* Block.swift */; };
+		344C133419E1D6D700215F54 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C133319E1D6D700215F54 /* GameOverViewController.swift */; };
+		344C133619E1D73100215F54 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C133519E1D73100215F54 /* GameOverScene.swift */; };
+		344C133819E1DE1E00215F54 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344C133719E1DE1E00215F54 /* GameOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		344C132D19E19EAE00215F54 /* BlocksGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocksGame.swift; sourceTree = "<group>"; };
 		344C132F19E1B19100215F54 /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		344C133119E1B1B700215F54 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		344C133319E1D6D700215F54 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		344C133519E1D73100215F54 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		344C133719E1DE1E00215F54 /* GameOverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,16 +100,19 @@
 				344C130119E18E0E00215F54 /* AppDelegate.swift */,
 				344C130719E18E0E00215F54 /* IntroViewController.swift */,
 				344C132719E196E800215F54 /* PlayViewController.swift */,
+				344C133319E1D6D700215F54 /* GameOverViewController.swift */,
 				344C130919E18E0E00215F54 /* Main.storyboard */,
 				344C130C19E18E0F00215F54 /* Images.xcassets */,
 				344C130E19E18E0F00215F54 /* LaunchScreen.xib */,
 				344C12FF19E18E0E00215F54 /* Supporting Files */,
 				344C132519E18E8800215F54 /* IntroScene.swift */,
 				344C132919E1971800215F54 /* PlayScene.swift */,
-				344C132B19E19BBF00215F54 /* GameOptions.swift */,
+				344C133519E1D73100215F54 /* GameOverScene.swift */,
 				344C132D19E19EAE00215F54 /* BlocksGame.swift */,
-				344C132F19E1B19100215F54 /* Array2D.swift */,
 				344C133119E1B1B700215F54 /* Block.swift */,
+				344C132B19E19BBF00215F54 /* GameOptions.swift */,
+				344C132F19E1B19100215F54 /* Array2D.swift */,
+				344C133719E1DE1E00215F54 /* GameOverView.swift */,
 			);
 			path = SKPlayground;
 			sourceTree = "<group>";
@@ -235,12 +244,15 @@
 			files = (
 				344C132C19E19BBF00215F54 /* GameOptions.swift in Sources */,
 				344C132819E196E800215F54 /* PlayViewController.swift in Sources */,
+				344C133619E1D73100215F54 /* GameOverScene.swift in Sources */,
 				344C132E19E19EAE00215F54 /* BlocksGame.swift in Sources */,
 				344C132A19E1971800215F54 /* PlayScene.swift in Sources */,
+				344C133419E1D6D700215F54 /* GameOverViewController.swift in Sources */,
 				344C130819E18E0E00215F54 /* IntroViewController.swift in Sources */,
 				344C133019E1B19100215F54 /* Array2D.swift in Sources */,
 				344C133219E1B1B700215F54 /* Block.swift in Sources */,
 				344C132619E18E8800215F54 /* IntroScene.swift in Sources */,
+				344C133819E1DE1E00215F54 /* GameOverView.swift in Sources */,
 				344C130219E18E0E00215F54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

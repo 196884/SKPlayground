@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Intro View Controller-->
@@ -53,8 +54,26 @@
                                     <segue destination="BV1-FR-VrT" kind="show" id="Icd-Dz-A7R"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iP6-hL-18M">
+                                <rect key="frame" x="23" y="28" width="183" height="138"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9a-Tl-my1">
+                                        <rect key="frame" x="35" y="19" width="115" height="38"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNJ-D6-swD">
+                                        <rect key="frame" x="35" y="65" width="115" height="44"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="37"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21169483418367352" green="0.21169483418367352" blue="0.21169483418367352" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="kLm-cx-Xrh" appends="YES" id="7zQ-mg-d9d"/>
@@ -63,6 +82,11 @@
                             <outletCollection property="gestureRecognizers" destination="6bC-cg-wk3" appends="YES" id="x6C-CA-SyO"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="JNJ-D6-swD" id="iLJ-5V-GKp"/>
+                        <outlet property="scoreView" destination="iP6-hL-18M" id="wC4-NB-RpE"/>
+                        <segue destination="JlN-Tt-pcl" kind="show" identifier="GameOverSegue" id="ME3-jA-Nhl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="om9-59-8nn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="kLm-cx-Xrh">
@@ -90,7 +114,60 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="811" y="136"/>
+            <point key="canvasLocation" x="908" y="-520"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="iXx-nh-o7A">
+            <objects>
+                <viewController id="JlN-Tt-pcl" customClass="GameOverViewController" customModule="SKPlayground" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aUH-v3-T1R"/>
+                        <viewControllerLayoutGuide type="bottom" id="mWx-W0-zze"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VnL-hy-vSU" customClass="GameOverView" customModule="SKPlayground" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-kb-Yal">
+                                <rect key="frame" x="136" y="105" width="329" height="118"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwi-DM-TZ9">
+                                <rect key="frame" x="98" y="326" width="137" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <state key="normal" title="Try Again">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="yzV-7n-bE9" kind="show" id="74m-lb-pKJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Rj-kb-Yal" firstAttribute="leading" secondItem="VnL-hy-vSU" secondAttribute="leadingMargin" constant="120" id="XA7-aF-VLg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Rj-kb-Yal" secondAttribute="trailing" constant="120" id="fVN-BF-zEl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameOverLabel" destination="1Rj-kb-Yal" id="1UE-Cj-RRm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSN-B5-jSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042" y="335"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="74m-lb-pKJ"/>
+    </inferredMetricsTieBreakers>
 </document>

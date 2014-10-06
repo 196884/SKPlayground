@@ -1,5 +1,5 @@
 //
-//  GameOptions.swift
+//  GameOverView.swift
 //  SKPlayground
 //
 //  Created by Regis Dupont on 10/5/14.
@@ -7,8 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
-class GameOptions {
-    var NumRows:Int    = 4
-    var NumColumns:Int = 4
+class GameOverView: UIView {
 }

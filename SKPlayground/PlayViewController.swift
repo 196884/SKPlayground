@@ -13,17 +13,21 @@ class PlayViewController: UIViewController, BlockMoverDelegate {
     var gameOptions:GameOptions!
     var blocksGame:BlocksGame!
     var playScene:PlayScene!
-
+    @IBOutlet weak var scoreView: UIView!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         blocksGame = BlocksGame(gameOptions: gameOptions!, delegate: self)
-        //blocksGame.beginGame()
     }
     
     override func viewWillAppear(animated: Bool) {
         playScene      = PlayScene(size: CGSizeMake(768, 1024), gameOptions: gameOptions!)
         let skView     = view as SKView
+        skView.showsFPS       = true
+        skView.showsNodeCount = true
+        skView.showsDrawCount = true
         skView.presentScene(playScene)
         blocksGame.beginGame()
     }
@@ -33,9 +37,12 @@ class PlayViewController: UIViewController, BlockMoverDelegate {
     }
     
     func gameDidBegin(blocksGame: BlocksGame) {
+        scoreLabel.text = "\(blocksGame.score)"
     }
     
     func gameDidEnd(blocksGame: BlocksGame) {
+        playScene.runAction(SKAction.waitForDuration(1.0))
+        performSegueWithIdentifier("GameOverSegue", sender: self)
     }
     
     func addBlock(block: Block) {
@@ -44,7 +51,7 @@ class PlayViewController: UIViewController, BlockMoverDelegate {
     
     func moveBlocks(movingBlocks: Array<Block>, transformedBlocks: Array<Block>, removedBlocks: Array<Block>, completion: () -> ()) {
         playScene.handleBlockMoves(movingBlocks, transformedBlocks: transformedBlocks, removedBlocks: removedBlocks, completion: completion)
-        //scoreLabel.text = "\(blockMover.score)"
+        scoreLabel.text = "\(blocksGame.score)"
     }
 
     @IBAction func moveRight(sender: UISwipeGestureRecognizer) {
@@ -61,5 +68,11 @@ class PlayViewController: UIViewController, BlockMoverDelegate {
     
     @IBAction func moveDown(sender: UISwipeGestureRecognizer) {
         blocksGame.moveDown()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dest = segue.destinationViewController as? GameOverViewController {
+            dest.gameOptions = gameOptions
+        }
     }
 }

@@ -60,9 +60,17 @@ class Block {
         self.color  = BlockColor.random()
     }
     
+    func combineWith(block: Block) -> Bool {
+        if let newColor = BlockColor.combine(color, color2: block.color) {
+            self.color = newColor
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func combineableWith(block: Block) -> Bool {
-        if let color = BlockColor.combine(color, color2: block.color) {
-            self.color = color
+        if let newColor = BlockColor.combine(color, color2: block.color) {
             return true
         } else {
             return false
